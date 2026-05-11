@@ -234,199 +234,21 @@ ul { list-style: none; }
   transform: translateX(3px);
 }
 
-/* ========== Hero ========== */
+/* ========== Hero（MV画像のみ・トリミングしない） ========== */
 .hero {
   position: relative;
-  color: var(--color-white);
-  overflow: hidden;
+  margin: 0;
   padding: 0;
-  min-height: 0;
-  background: #c8b8a0;
+  background: #1a0a0a;
+  overflow: visible;
 }
 
-.hero__bg {
-  position: relative;
+.hero__mv {
+  display: block;
   width: 100%;
-  aspect-ratio: 9 / 16;
-  background: #c8b8a0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero__video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.hero__bg::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(180deg, rgba(15,5,5,0.1) 0%, rgba(15,5,5,0.05) 25%, rgba(15,5,5,0.2) 50%, rgba(15,5,5,0.45) 75%, rgba(15,5,5,0.6) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.hero__inner {
-  position: relative;
-  z-index: 2;
-  padding: 0;
-  text-align: left;
-}
-
-.hero__logo {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 10;
-}
-
-.hero__logo img {
-  height: 32px;
-  width: auto;
-}
-
-.hero__france-badge {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(135deg, #a08030 0%, #c4a35a 40%, #dcc07a 60%, #c4a35a 100%);
-  padding: 6px 18px;
-  border-radius: 4px;
-  letter-spacing: 0.08em;
-  margin-top: 50px;
-  margin-bottom: 8px;
-}
-
-.hero__title {
-  font-weight: 700;
-  line-height: 1.4;
-  color: var(--color-white);
-  margin-bottom: 10px;
-}
-
-.hero__title-main {
-  font-size: clamp(30px, 8.5vw, 42px);
-  font-weight: 900;
-  display: block;
-  margin-bottom: 8px;
-  line-height: 1.2;
-  background: linear-gradient(135deg, #c4a35a 0%, #e8d48a 25%, #f5ecc8 50%, #e8d48a 75%, #a08030 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gold-shimmer 4s ease-in-out infinite;
-  filter: drop-shadow(0 2px 8px rgba(196,163,90,0.4));
-}
-
-@keyframes gold-shimmer {
-  0% { background-position: 100% 0; }
-  50% { background-position: 0% 0; }
-  100% { background-position: 100% 0; }
-}
-
-.hero__title-sub {
-  display: block;
-  font-size: clamp(12px, 3.2vw, 15px);
-  font-weight: 400;
-  color: rgba(255,255,255,0.75);
-  letter-spacing: 0.04em;
-  line-height: 1.7;
-  margin-top: 6px;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
-}
-
-.hero__brand-img {
-  display: block;
-  width: 92%;
-  max-width: 380px;
-  margin-bottom: 20px;
-  opacity: 0.95;
-  filter: drop-shadow(0 0 12px rgba(255,255,255,0.6)) drop-shadow(0 0 24px rgba(255,255,255,0.3));
-}
-
-.hero__device {
-  text-align: center;
-  margin: 24px 0;
-}
-
-.hero__device img {
-  max-width: 70%;
+  max-width: 100%;
   height: auto;
-  display: inline-block;
-  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
-}
-
-.hero__device-placeholder {
-  width: 100%;
-  aspect-ratio: 4/3;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.06);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.35);
-  font-size: 0.82rem;
-}
-
-/* Hero Point Badges */
-.hero__points {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 24px;
-}
-
-.hero__point {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(8px);
-  border-radius: 6px;
-  padding: 14px 20px;
-  border-left: 3px solid var(--color-gold);
-  width: 100%;
-}
-
-.hero__point-label {
-  font-family: var(--font-en);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--color-gold);
-  text-transform: uppercase;
-  flex-shrink: 0;
-}
-
-.hero__point-num {
-  font-family: var(--font-en);
-  font-size: 1.05rem;
-  font-weight: 900;
-  color: #fff;
-  margin-left: 2px;
-}
-
-.hero__point-text {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.02em;
-  line-height: 1.4;
+  vertical-align: top;
 }
 
 /* ========== Problem Section ========== */
@@ -1621,7 +1443,9 @@ ul { list-style: none; }
   animation: cta-pulse 2.4s ease-in-out infinite;
   position: relative;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
   justify-content: center;
   border-radius: var(--radius-md);
 }
@@ -2216,15 +2040,6 @@ html { font-size: 16px; }
 .section-sub { font-size: 0.95rem; line-height: 1.8; }
 .section-line { width: 50px; margin: 14px auto; }
 
-.hero__bg { padding-top: 0; }
-.hero__inner { padding: 20px 0 0; }
-.hero__logo { top: 14px; left: 14px; }
-.hero__logo img { height: 36px !important; }
-.hero__points { gap: 8px; margin-top: 60px; }
-.hero__point { padding: 14px 20px; gap: 12px; }
-.hero__point-text { font-size: 0.78rem; white-space: nowrap; }
-.hero__brand-img { width: 92%; max-width: 380px; margin-bottom: 12px; filter: drop-shadow(0 0 16px rgba(255,255,255,0.7)) drop-shadow(0 0 32px rgba(255,255,255,0.4)) !important; }
-
 .problem .section-title { font-size: 1.25rem; }
 .problem .section-sub { font-size: 1.05rem; }
 .problem__inner { padding: 24px 18px; margin-top: 24px; }
@@ -2311,7 +2126,7 @@ html { font-size: 16px; }
 
 .floating-cta__img { width: 160px; margin-top: -30px; position: relative; z-index: 10; }
 .floating-cta__line1 { font-size: 0.82em; }
-.floating-cta__line2 { font-size: 1.25em; white-space: nowrap; }
+.floating-cta__line2 { font-size: 1.25em; white-space: normal; line-height: 1.25; }
 
 /* ========== Origin (France to Japan) ========== */
 .origin {
@@ -2545,6 +2360,14 @@ html { font-size: 16px; }
   transform: translateY(0);
   will-change: auto;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 </style>
 </head>
 
@@ -2556,41 +2379,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ==================== HERO ==================== -->
 <section class="hero" id="hero">
-  <div class="hero__bg">
-    <video class="hero__video" autoplay loop muted playsinline>
-      <source src="images/MV_movie1.mp4" type="video/mp4">
-    </video>
-    <div class="hero__logo">
-      <img src="images/logo.png" alt="GUINOT">
-    </div>
-
-    <div class="container">
-      <div class="hero__inner">
-        <p class="hero__france-badge">ヨーロッパ・フランス国内シェアNO.1ブランド</p>
-        <h1 class="hero__title">
-          <img src="images/VAR_logo_2.png" alt="VISIBLE AGE REVERSE" class="hero__brand-img" style="background:rgba(255,255,255,0.25);padding:10px 16px;border-radius:8px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);">
-          <span class="hero__title-main">30分1回で<br>お肌の変化を実感</span>
-          <span class="hero__title-sub">アンチエイジングに革命を起こす<br>フェイシャルマシン</span>
-        </h1>
-
-      <!-- Point badges -->
-      <div class="hero__points">
-        <div class="hero__point">
-          <span class="hero__point-label">POINT</span><span class="hero__point-num">01</span>
-          <span class="hero__point-text">フランス発 No.1エステティックブランド</span>
-        </div>
-        <div class="hero__point">
-          <span class="hero__point-label">POINT</span><span class="hero__point-num">02</span>
-          <span class="hero__point-text">30分1回で実感。リピート率90%以上</span>
-        </div>
-        <div class="hero__point">
-          <span class="hero__point-label">POINT</span><span class="hero__point-num">03</span>
-          <span class="hero__point-text">世界91カ国 17,000店舗以上の導入実績</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
+  <img class="hero__mv" src="images/MV_image_3.png?v=1778498514" alt="VAR メインビジュアル" width="887" height="1774" loading="eager" fetchpriority="high" decoding="async">
 </section>
 
 <!-- ==================== IMPACT ==================== -->
@@ -3407,7 +3196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="form-section__title fade-up">資料請求・無料体験のお申し込み</h2>
     <p class="form-section__sub fade-up">下記フォームよりお気軽にお問い合わせください</p>
     <div class="form-section__iframe-wrap fade-up">
-      <iframe id="rizbell-form" src="https://lfo.rizbell.com/booking/org_01KMY7M23MG8N8G9ETGJ38HG59?project=proj_c4sx3ae4&embed=true" width="100%" frameborder="0" style="border: none; max-width: 600px; min-height: 800px; margin: 0 auto; display: block;"></iframe>
+      <iframe id="rizbell-form" src="https://lfo.rizbell.com/booking/org_01KMY7M23MG8N8G9ETGJ38HG59?project=proj_c4sx3ae4&embed=true" width="100%" frameborder="0" style="border: none; max-width: 600px; min-height: 2000px; margin: 0 auto; display: block;"></iframe>
     </div>
   </div>
 </section>
@@ -3442,6 +3231,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var els = document.querySelectorAll('.fade-up');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function(el) { el.classList.add('visible'); });
+  }
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) {
@@ -3449,8 +3241,10 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.unobserve(e.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-  els.forEach(function(el) { observer.observe(el); });
+  }, { threshold: 0.01, rootMargin: '0px 0px 25% 0px' });
+  if (!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    els.forEach(function(el) { observer.observe(el); });
+  }
 
   var floatingCta = document.querySelector('.floating-cta');
   var formSection = document.querySelector('.form-section') || document.querySelector('.final-cta');
