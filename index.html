@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- Google Tag Manager（本番ドメインのみ。ローカル表示では読み込まない） -->
+<!-- Google Tag Manager（本番のみ・初回描画後に遅延読込。ローカルでは無効） -->
 <script>(function(w,d,s,l,i){
 if(/^127\.0\.0\.1$|^localhost$/.test(w.location.hostname||''))return;
-w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+function g(){
+w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+}
+if('requestIdleCallback'in w)w.requestIdleCallback(g,{timeout:4000});
+else w.addEventListener('load',function(){setTimeout(g,0);});
 })(window,document,'script','dataLayer','GTM-NJPH7P3R');</script>
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VAR | 30分1回でお肌の変化を実感 アンチエイジングに革命を起こすフェイシャルマシン</title>
 <meta name="description" content="エステ発祥の地フランスでシェアNo.1のGUINOTが開発した集大成フェイシャルマシンVAR。30分1回で目に見える変化を実感。ダウンタイム0、肌トラブル0、敏感肌もOK。">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preload" as="image" href="images/MV_3.jpeg?v=2" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Montserrat:wght@400;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Montserrat:wght@400;600;700;800&display=swap"></noscript>
 <style>
 
 :root {
@@ -87,7 +90,7 @@ html {
 }
 @media (min-width: 431px) {
   html {
-    background: #1a0a0a url('images/backgraund.png') center top / cover no-repeat fixed;
+    background: #1a0a0a url('images/backgraund.png') center top / cover no-repeat scroll;
   }
 }
 
@@ -2392,7 +2395,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ==================== HERO ==================== -->
 <section class="hero" id="hero">
-  <img class="hero__mv" src="images/MV_3.jpeg?v=1" alt="VAR メインビジュアル" width="860" height="1829" loading="eager" fetchpriority="high" decoding="async">
+  <img class="hero__mv" src="images/MV_3.jpeg?v=2" alt="VAR メインビジュアル" width="860" height="1829" loading="eager" fetchpriority="high" decoding="async">
 </section>
 
 <!-- ==================== IMPACT (BWJ Tokyo 2026 相当) ==================== -->
@@ -2887,7 +2890,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-<script src="https://lfo.rizbell.com/embed-form.js"></script>
 
 <!-- ==================== FOOTER ==================== -->
 <footer class="footer">
@@ -2914,7 +2916,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </a>
 </div>
 
-<!-- JavaScript -->
+<!-- JavaScript（Rizbell は defer でメインスレッド競合を軽減） -->
+<script defer src="https://lfo.rizbell.com/embed-form.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var els = document.querySelectorAll('.fade-up');
