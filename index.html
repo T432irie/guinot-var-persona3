@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!-- Google Tag Manager（本番ドメインのみ。ローカル表示では読み込まない） -->
+<script>(function(w,d,s,l,i){
+if(/^127\.0\.0\.1$|^localhost$/.test(w.location.hostname||''))return;
+w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -2390,7 +2392,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ==================== HERO ==================== -->
 <section class="hero" id="hero">
-  <img class="hero__mv" src="images/MV_image_3.jpg?v=3" alt="VAR メインビジュアル" width="887" height="1774" loading="eager" fetchpriority="high" decoding="async">
+  <img class="hero__mv" src="images/MV_3.jpeg?v=1" alt="VAR メインビジュアル" width="860" height="1829" loading="eager" fetchpriority="high" decoding="async">
 </section>
 
 <!-- ==================== IMPACT (BWJ Tokyo 2026 相当) ==================== -->
