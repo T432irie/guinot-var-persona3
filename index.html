@@ -1398,7 +1398,7 @@ ul { list-style: none; }
 
 /* Mid CTA (reused) */
 .mid-cta {
-  background: #fff;
+  background: linear-gradient(135deg, #8a0e2e 0%, #b6123a 50%, #d4164a 100%);
   padding: 48px 0;
   position: relative;
   overflow: hidden;
@@ -1423,14 +1423,14 @@ ul { list-style: none; }
   font-weight: 900;
   margin-bottom: 12px;
   letter-spacing: 0.04em;
-  color: #1a1a1a;
-  -webkit-text-fill-color: #1a1a1a;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
   line-height: 1.6;
 }
 
 .mid-cta__text {
   font-size: 0.92rem;
-  color: rgba(26,26,26,0.7);
+  color: rgba(255,255,255,0.85);
   line-height: 1.8;
   margin-bottom: 20px;
 }
@@ -1442,12 +1442,46 @@ ul { list-style: none; }
   text-decoration: none;
   background: transparent;
 }
-
 .mid-cta__banner picture,
 .mid-cta__banner img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.mid-cta .btn--primary {
+  display: inline-flex;
+  background: linear-gradient(135deg, #a08030 0%, #c4a35a 30%, #dcc07a 50%, #c4a35a 70%, #a08030 100%);
+  color: #0f0505;
+  font-weight: 900;
+  font-size: 1.1rem;
+  padding: 18px 28px;
+  letter-spacing: 0.03em;
+  border: none;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.3), 0 4px 16px rgba(196,163,90,0.35);
+  animation: cta-pulse 2.4s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+  justify-content: center;
+  border-radius: var(--radius-md);
+}
+
+.mid-cta .btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  animation: cta-shimmer 3s ease-in-out infinite;
+}
+
+.mid-cta .btn--primary:hover {
+  box-shadow: 0 6px 28px rgba(196,163,90,0.5);
+  animation: none;
+  transform: translateY(-2px);
 }
 
 .mid-cta__img {
@@ -1826,13 +1860,87 @@ ul { list-style: none; }
 }
 
 .floating-cta__btn {
-  display: block;
-  line-height: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 0 !important;
+  overflow: visible;
+  background: linear-gradient(135deg, #8a0e2e 0%, #b6123a 50%, #d4164a 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3) !important;
+  border-radius: 0 !important;
   width: 100%;
   text-decoration: none;
-  background: transparent;
 }
 
+.floating-cta__btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+  animation: floating-cta-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes floating-cta-shimmer {
+  0% { left: -100%; }
+  60% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.floating-cta__text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+  gap: 6px;
+  padding: 16px 20px;
+  flex: 1;
+}
+
+.floating-cta__line1 {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 0.78em;
+  opacity: 0.95;
+  background: rgba(196,163,90,0.35);
+  padding: 3px 12px;
+  border-radius: 3px;
+}
+
+.floating-cta__line2 {
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  font-size: 1.3em;
+}
+
+.floating-cta__img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-right: 10px;
+  margin-top: -8px;
+  margin-bottom: -8px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+}
+
+.floating-cta__btn {
+  display: block !important;
+  line-height: 0 !important;
+  width: 100% !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  color: inherit !important;
+}
 .floating-cta__btn picture,
 .floating-cta__btn img {
   width: 100%;
@@ -2041,6 +2149,7 @@ html { font-size: 16px; }
 .mid-cta { padding: 32px 0; }
 .mid-cta__lead { font-size: 1.1rem; }
 .mid-cta__text { font-size: 0.95rem; margin-bottom: 14px; }
+.mid-cta .btn--primary { font-size: 1rem; padding: 14px 12px; }
 .mid-cta__img { width: 260px; }
 
 .offer { padding: 40px 0; }
@@ -2061,6 +2170,9 @@ html { font-size: 16px; }
 .form-section__title { font-size: 1.1rem; }
 .form-section__sub { font-size: 0.82rem; }
 
+.floating-cta__img { width: 160px; margin-top: -30px; position: relative; z-index: 10; }
+.floating-cta__line1 { font-size: 0.82em; }
+.floating-cta__line2 { font-size: 1.25em; white-space: normal; line-height: 1.25; }
 
 /* ========== Origin (France to Japan) ========== */
 .origin {
