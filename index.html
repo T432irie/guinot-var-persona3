@@ -1648,6 +1648,21 @@ ul { list-style: none; }
   filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
 }
 
+/* Contact: 画像バナーのみ（背景は画像に任せる） */
+.mid-cta--banner {
+  background: transparent;
+  padding: 32px 0;
+}
+.mid-cta--banner .mid-cta__banner-link {
+  display: block;
+  line-height: 0;
+}
+.mid-cta--banner .mid-cta__banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 @keyframes cta-pulse {
   0%, 100% { box-shadow: 0 4px 20px rgba(196,163,90,0.3); transform: scale(1); }
   50% { box-shadow: 0 6px 32px rgba(196,163,90,0.5); transform: scale(1.03); }
@@ -2290,6 +2305,7 @@ html { font-size: 16px; }
 .mid-cta__text { font-size: 0.95rem; margin-bottom: 14px; }
 .mid-cta .btn--primary { font-size: 1rem; padding: 14px 12px; }
 .mid-cta__img { width: 260px; }
+.mid-cta--banner { padding: 28px 0; }
 
 .offer { padding: 40px 0; }
 .offer__card { padding: 22px 16px; }
@@ -3387,17 +3403,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ==================== FINAL CTA ==================== -->
-<section class="mid-cta" id="contact">
+<section class="mid-cta mid-cta--banner" id="contact">
   <div class="container">
-    <div class="mid-cta__inner">
-      <div class="mid-cta__content">
-        <p class="mid-cta__lead">まずはVARの変化を<br>あなたの肌でご体感ください</p>
-        <p class="mid-cta__text">無料体験のお申し込みはこちら</p>
-        <a href="#form" class="btn btn--primary">
-          資料請求・無料体験に申し込む <span class="arrow">&rarr;</span>
-        </a>
-      </div>
-    </div>
+    <a href="#form" class="mid-cta__banner-link" aria-label="資料請求・無料体験のお申し込みフォームへ">
+      <img src="images/CTA.png?v=2" alt="まずはVARで驚きの反応を、あなたの肌でご体感ください" width="1024" height="430" loading="lazy" decoding="async" class="mid-cta__banner-img">
+    </a>
   </div>
 </section>
 
